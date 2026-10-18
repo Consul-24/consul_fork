@@ -59,9 +59,15 @@ Capybara.register_driver :headless_chrome do |app|
     opts.add_argument "--no-sandbox"
     opts.add_argument "--window-size=1200,800"
     opts.add_argument "--proxy-server=#{Capybara.app_host}:#{Capybara::Webmock.port_number}"
+    opts.binary = ENV["CHROME_BIN"] if ENV["CHROME_BIN"]
   end
 
-  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+  driver_options = { browser: :chrome, options: options }
+  if ENV["CHROMEDRIVER_PATH"]
+    driver_options[:service] = Selenium::WebDriver::Service.chrome(path: ENV["CHROMEDRIVER_PATH"])
+  end
+
+  Capybara::Selenium::Driver.new(app, **driver_options)
 end
 
 Capybara.exact = true
