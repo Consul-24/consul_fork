@@ -78,7 +78,7 @@ end
 group :test do
   gem "capybara", "~> 3.40.0"
   gem "capybara-webmock", "~> 0.7.0"
-  gem "email_spec", "~> 2.3.0"
+  gem "email_spec", "~> 2.3.1"
   gem "pdf-reader", "~> 2.14.1"
   gem "rspec-rails", "~> 7.1.1"
   gem "selenium-webdriver", "~> 4.29.1"
@@ -97,17 +97,17 @@ group :development do
   gem "faraday-retry", "~> 2.2.1", require: false
   gem "htmlbeautifier", "~> 1.4.3", require: false
   gem "mdl", "~> 0.13.0", require: false
-  gem "pronto", "~> 0.11.2", require: false
+  gem "pronto", "~> 0.11.5", require: false
   gem "pronto-erb_lint", "~> 0.1.6", require: false
   gem "pronto-eslint", "~> 0.11.1", require: false
   gem "pronto-rubocop", "~> 0.11.6", require: false
   gem "pronto-stylelint", "~> 0.11.0", require: false
-  gem "rubocop", "~> 1.71.2", require: false
+  gem "rubocop", "~> 1.92.2", require: false
   gem "rubocop-capybara", "~> 2.21.0", require: false
   gem "rubocop-factory_bot", "~> 2.26.1", require: false
   gem "rubocop-performance", "~> 1.23.1", require: false
   gem "rubocop-rails", "~> 2.29.1", require: false
-  gem "rubocop-rspec", "~> 3.4.0", require: false
+  gem "rubocop-rspec", "~> 3.10.2", require: false
   gem "rubocop-rspec_rails", "~> 2.30.0", require: false
   gem "rvm1-capistrano3", "~> 1.4.0", require: false
   gem "spring", "~> 4.2.1"
