@@ -113,7 +113,7 @@ GEM
     autoprefixer-rails (10.4.21.0)
       execjs (~> 2)
     base64 (0.3.0)
-    bcrypt (3.1.20)
+    bcrypt (3.1.22)
     bcrypt_pbkdf (1.1.2)
     benchmark (0.5.0)
     better_html (2.1.1)
@@ -173,7 +173,7 @@ GEM
     caxlsx_rails (0.6.4)
       actionpack (>= 3.1)
       caxlsx (>= 3.0)
-    cgi (0.5.0)
+    cgi (0.5.2)
     chef-utils (18.4.2)
       concurrent-ruby
     childprocess (5.1.0)
@@ -191,13 +191,13 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.3.5)
-    connection_pool (2.5.4)
-    crass (1.0.6)
+    concurrent-ruby (1.3.8)
+    connection_pool (3.0.2)
+    crass (1.0.8)
     csv (3.3.5)
     daemons (1.4.1)
     dalli (3.2.8)
-    date (3.4.1)
+    date (3.6.0)
     debug (1.9.2)
       irb (~> 1.10)
       reline (>= 0.3.8)
@@ -207,10 +207,10 @@ GEM
       activerecord (>= 3.0, < 9.0)
       delayed_job (>= 3.0, < 5)
     device_detector (1.1.3)
-    devise (4.9.4)
+    devise (5.0.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
-      railties (>= 4.1.0)
+      railties (>= 7.0)
       responders
       warden (~> 1.2.3)
     devise-security (0.18.0)
@@ -225,7 +225,7 @@ GEM
       mail (~> 2.7)
     email_validator (2.2.4)
       activemodel
-    erb (5.1.3)
+    erb (6.0.7)
     erb_lint (0.9.0)
       activesupport
       better_html (>= 2.0.1)
@@ -309,7 +309,7 @@ GEM
       mutex_m
       nkf
       rack (>= 2.0, < 4)
-    i18n (1.14.7)
+    i18n (1.15.2)
       concurrent-ruby (~> 1.0)
     i18n-tasks (0.9.37)
       activesupport (>= 4.0.2)
@@ -326,9 +326,10 @@ GEM
       ruby-vips (>= 2.0.17, < 3)
     invisible_captcha (2.3.0)
       rails (>= 5.2)
-    io-console (0.8.1)
-    irb (1.15.2)
+    io-console (0.9.5)
+    irb (1.18.0)
       pp (>= 0.6.0)
+      prism (>= 1.3.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     json (2.15.2)
@@ -373,7 +374,7 @@ GEM
       rexml
     lint_roller (1.1.0)
     logger (1.7.0)
-    loofah (2.24.1)
+    loofah (2.25.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     mail (2.8.1)
@@ -396,7 +397,9 @@ GEM
     mini_magick (4.13.2)
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
-    minitest (5.26.0)
+    minitest (6.0.6)
+      drb (~> 2.0)
+      prism (~> 1.5)
     mixlib-cli (2.1.8)
     mixlib-config (3.0.27)
       tomlrb
@@ -424,7 +427,7 @@ GEM
     net-ssh (7.3.0)
     nio4r (2.7.5)
     nkf (0.2.0)
-    nokogiri (1.18.10)
+    nokogiri (1.19.4)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     nori (2.7.1)
@@ -502,9 +505,9 @@ GEM
     pg_search (2.3.7)
       activerecord (>= 6.1)
       activesupport (>= 6.1)
-    pp (0.6.3)
+    pp (0.6.4)
       prettyprint
-    prettyprint (0.2.0)
+    prettyprint (0.2.1)
     prism (1.6.0)
     pronto (0.11.4)
       gitlab (>= 4.4.0, < 5.0)
@@ -526,14 +529,11 @@ GEM
     pronto-stylelint (0.11.1)
       pronto (>= 0.10, < 0.12)
       rugged (>= 0.24, < 2.0)
-    psych (5.2.6)
-      date
-      stringio
     public_suffix (6.0.1)
     puma (6.6.1)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (2.2.20)
+    rack (2.2.25)
     rack-accept (0.4.5)
       rack (>= 0.4)
     rack-oauth2 (2.2.1)
@@ -550,7 +550,7 @@ GEM
       rack
     rack-session (1.0.2)
       rack (< 3)
-    rack-test (2.2.0)
+    rack-test (2.3.0)
       rack (>= 1.3)
     rackup (1.0.1)
       rack (< 3)
@@ -573,8 +573,8 @@ GEM
       activesupport (>= 5.0.0)
       minitest
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.6.2)
-      loofah (~> 2.21)
+    rails-html-sanitizer (1.7.1)
+      loofah (~> 2.25, >= 2.25.2)
       nokogiri (>= 1.15.7, != 1.16.7, != 1.16.6, != 1.16.5, != 1.16.4, != 1.16.3, != 1.16.2, != 1.16.1, != 1.16.0.rc1, != 1.16.0)
     rails-i18n (7.0.9)
       i18n (>= 0.7, < 2)
@@ -590,17 +590,22 @@ GEM
       tsort (>= 0.2)
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
-    rake (13.3.1)
+    rake (13.4.2)
+    rbs (4.2.0)
+      logger
+      prism (>= 1.6.0)
+      tsort
     rbtree3 (0.7.1)
-    rdoc (6.15.0)
+    rdoc (8.1.0)
       erb
-      psych (>= 4.0.0)
+      prism (>= 1.6.0)
+      rbs (>= 4.0.0)
       tsort
     recipient_interceptor (0.3.3)
       mail
     redcarpet (3.6.1)
     regexp_parser (2.11.3)
-    reline (0.6.2)
+    reline (0.7.0)
       io-console (~> 0.5)
     request_store (1.7.0)
       rack (>= 1.4)
@@ -745,7 +750,6 @@ GEM
       net-sftp (>= 2.1.2)
       net-ssh (>= 2.8.0)
       ostruct
-    stringio (3.1.7)
     swd (2.0.3)
       activesupport (>= 3)
       attr_required (>= 0.0.5)
@@ -755,7 +759,7 @@ GEM
       unicode-display_width (>= 1.1.1, < 4)
     terrapin (0.6.0)
       climate_control (>= 0.0.3, < 1.0)
-    thor (1.4.0)
+    thor (1.5.0)
     tilt (2.0.10)
     timeout (0.4.3)
     tomlrb (2.0.3)
@@ -801,7 +805,7 @@ GEM
       activesupport
       faraday (~> 2.0)
       faraday-follow_redirects
-    webrick (1.9.1)
+    webrick (1.9.2)
     websocket (1.2.11)
     websocket-driver (0.8.0)
       base64
@@ -815,7 +819,7 @@ GEM
     wkhtmltopdf-binary (0.12.6.9)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.7.3)
+    zeitwerk (2.8.3)
 
 PLATFORMS
   ruby
@@ -848,7 +852,7 @@ DEPENDENCIES
   dalli (~> 3.2.8)
   debug (~> 1.9.2)
   delayed_job_active_record (~> 4.1.11)
-  devise (~> 4.9.4)
+  devise (~> 5.0.4)
   devise-security (~> 0.18.0)
   ed25519 (>= 1.2, < 2.0)
   email_spec (~> 2.3.0)
