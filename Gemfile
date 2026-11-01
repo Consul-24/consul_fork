@@ -111,7 +111,7 @@ group :development do
   gem "rubocop-rails", "~> 2.37.0", require: false
   gem "rubocop-rspec", "~> 3.10.2", require: false
   gem "rubocop-rspec_rails", "~> 2.32.0", require: false
-  gem "rvm1-capistrano3", "~> 1.4.0", require: false
+  gem "rvm1-capistrano3", "~> 1.4.1", require: false
   gem "web-console", "~> 4.3.0"
 end
 
