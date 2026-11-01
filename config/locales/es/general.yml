@@ -579,6 +579,9 @@ es:
   polls:
     dates: "Desde el %{open_at} hasta el %{closed_at}"
     final_date: "Recuento final/Resultados"
+    questions_count:
+      one: "Esta votación tiene 1 pregunta."
+      other: "Esta votación tiene %{count} preguntas."
     form:
       vote: "Votar"
       maximum_exceeded: "has seleccionado %{given} respuestas, pero el máximo que puedes seleccionar es %{maximum}"
@@ -646,6 +649,7 @@ es:
     description:
       multiple: "Puedes seleccionar un máximo de %{maximum} respuestas."
     read_more_about: "Leer más:"
+    custom_answer_aria_label: "Respuesta para %{option}"
   proposal_notifications:
     new:
       title: "Enviar notificación"

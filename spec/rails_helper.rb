@@ -19,7 +19,12 @@ require "custom_spec_helper"
 require "capybara/rails"
 require "capybara/rspec"
 require "selenium/webdriver"
+require "billy/capybara/rspec"
 require "view_component/test_helpers"
+
+Billy.configure do |config|
+  config.non_whitelisted_requests_disabled = true
+end
 
 module ViewComponent
   module TestHelpers
@@ -36,6 +41,9 @@ end
 RSpec.configure do |config|
   config.include ViewComponent::TestHelpers, type: :component
 end
+
+# TODO: remove when upgrading to Rails 8.1
+Object.send(:remove_const, :STATS_DIRECTORIES) if defined?(STATS_DIRECTORIES)
 
 Rails.application.load_tasks if Rake::Task.tasks.empty?
 
@@ -75,16 +83,13 @@ Capybara.register_driver :headless_chrome do |app|
     opts.add_argument "--headless"
     opts.add_argument "--no-sandbox"
     opts.add_argument "--window-size=1200,800"
-    opts.add_argument "--proxy-server=#{Capybara.app_host}:#{Capybara::Webmock.port_number}"
-    opts.binary = ENV["CHROME_BIN"] if ENV["CHROME_BIN"]
+    opts.add_argument "--ignore-certificate-errors"
+    opts.add_argument "--proxy-server=#{Billy.proxy.host}:#{Billy.proxy.port}"
+    opts.add_argument "--proxy-bypass-list=127.0.0.1;localhost;lvh.me;*.lvh.me"
+    opts.add_argument "--disable-features=DeferRendererTasksAfterInput"
   end
 
-  driver_options = { browser: :chrome, options: options }
-  if ENV["CHROMEDRIVER_PATH"]
-    driver_options[:service] = Selenium::WebDriver::Service.chrome(path: ENV["CHROMEDRIVER_PATH"])
-  end
-
-  Capybara::Selenium::Driver.new(app, **driver_options)
+  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
 end
 
 Capybara.exact = true
