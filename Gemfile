@@ -79,7 +79,7 @@ end
 group :test do
   gem "capybara", "~> 3.40.0"
   gem "capybara-webmock", "~> 0.7.0"
-  gem "email_spec", "~> 2.3.0"
+  gem "email_spec", "~> 2.3.1"
   gem "pdf-reader", "~> 2.14.1"
   gem "rspec-rails", "~> 7.1.1"
   gem "selenium-webdriver", "~> 4.38.0"
@@ -103,10 +103,10 @@ group :development do
   gem "pronto-eslint", "~> 0.11.1", require: false
   gem "pronto-rubocop", "~> 0.11.6", require: false
   gem "pronto-stylelint", "~> 0.11.1", require: false
-  gem "rubocop", "~> 1.81.7", require: false
+  gem "rubocop", "~> 1.92.2", require: false
   gem "rubocop-capybara", "~> 2.22.1", require: false
   gem "rubocop-factory_bot", "~> 2.27.1", require: false
-  gem "rubocop-performance", "~> 1.26.1", require: false
+  gem "rubocop-performance", "~> 1.27.0", require: false
   gem "rubocop-rails", "~> 2.33.4", require: false
   gem "rubocop-rspec", "~> 3.7.0", require: false
   gem "rubocop-rspec_rails", "~> 2.31.0", require: false
